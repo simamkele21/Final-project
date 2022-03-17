@@ -1,24 +1,115 @@
 <template>
   <div class="about">
     <div class="container">
-      <p>About</p>
-        <div class="col-md-12 text-center">
-          avwsfvcjabsvervb x  svsvdv
+      <div class="row">
+        <div class="col-md-5 text-center">
+          <div id="map">map</div>
         </div>
+        <div class="col-md-7">
+          <div class="contact-form">
+            <form @submit.prevent="handleSubmit">
+              <label>Name</label>
+              <input
+                type="name"
+                required
+                v-model="name"
+                placeholder="Enter name"
+              />
+              <label>Last Name</label>
+              <input
+                type="surname"
+                required
+                v-model="surname"
+                placeholder="Enter last name"
+              />
+              <label>Email</label>
+              <input
+                type="email"
+                required
+                v-model="email"
+                placeholder="Enter email"
+              />
+              <label>Messege</label>
+              <input
+                type="message"
+                v-model="message"
+                placeholder="Enter message"
+              />
+              <div class="submit">
+                <button>Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
+<script>
+export default {};
+</script>
 <style scoped>
 .container {
-  border: 1px solid;
+  /* border: 1px solid; */
   margin-top: 5.5em;
 }
-.about {
-  height: 66vh;
+
+#map {
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 22.25%;
+  padding-top: 30px;
+  position: relative;
 }
-.img-thumbnail {
-  height: 55vh;
+img {
+  margin-top: 2.8em;
 }
-@media screen and (min-width: 100px) and (max-width: 799px);
+form {
+  max-width: 420px;
+  margin: 30px auto;
+  background: white;
+  text-align: left;
+  padding: 40px;
+  border-radius: 10px;
+}
+label {
+  color: #aaa;
+  display: inline-block;
+  margin: 25px 0 15px;
+  font-size: 0.6em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+input {
+  display: block;
+  padding: 10px 6px;
+  width: 100%;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  color: #555;
+}
+.half {
+  float: left;
+  width: 48%;
+  margin-bottom: 1em;
+}
+
+.right {
+  width: 50%;
+}
+
+.left {
+  margin-right: 2%;
+}
+
+@media (max-width: 480px) {
+  .half {
+    width: 100%;
+    float: none;
+    margin-bottom: 0;
+  }
+}
 </style>

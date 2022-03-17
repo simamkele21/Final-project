@@ -16,7 +16,7 @@
         deadly has been highly successful since day one. Browse our site and get
         in touch if you need any assistance. Happy shopping!
       </p>
-      <button type="button" class="btn btn-primary">
+      <button type="button" class="btn">
         <router-link :to="{ name: 'Contact' }">Contact</router-link>
       </button>
     </div>
@@ -25,7 +25,7 @@
 
 <style scoped>
 .container {
-  border: 1px solid;
+  /* border: 1px solid; */
   margin-top: 5.5em;
 }
 .about {

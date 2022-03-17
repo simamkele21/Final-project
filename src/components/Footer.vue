@@ -45,3 +45,9 @@
     <!-- Copyright -->
   </footer>
 </template>
+
+<style scoped>
+.btn {
+  background-color:transparent;
+}
+</style>
