@@ -3,7 +3,12 @@
     <div class="container">
       <div class="row">
         <div class="col-md-5 text-center">
-          <div id="map">map</div>
+          <div id="map">
+            <h1>CONTACT US</h1>
+            <p>Cape Town South Africa</p>
+            <p>hocic14062@xindax.com</p>
+            <p>123-456-7890</p>
+          </div>
         </div>
         <div class="col-md-7">
           <div class="contact-form">
@@ -53,13 +58,15 @@ export default {};
 .container {
   /* border: 1px solid; */
   margin-top: 5.5em;
+    background: rgb(61, 59, 59);
+
 }
 
 #map {
   height: 0;
   overflow: hidden;
   padding-bottom: 22.25%;
-  padding-top: 30px;
+  padding-top: 100px;
   position: relative;
 }
 img {
@@ -68,7 +75,7 @@ img {
 form {
   max-width: 420px;
   margin: 30px auto;
-  background: white;
+    background: rgb(61, 59, 59);
   text-align: left;
   padding: 40px;
   border-radius: 10px;
@@ -88,7 +95,8 @@ input {
   width: 100%;
   box-sizing: border-box;
   border: none;
-  border-bottom: 1px solid #ddd;
+  border-radius: 0.5em;
+  border-bottom: 1px solid rgb(54, 54, 54);
   color: #555;
 }
 .half {

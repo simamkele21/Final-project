@@ -1,6 +1,5 @@
 <template>
   <div class="shop">
-    <p>About</p>
     <div class="container">
       <div class="card">
         <div
@@ -24,7 +23,7 @@
             Some quick example text to build on the card title and make up the
             bulk of the card's content.
           </p>
-          <a href="#!" class="btn">
+          <a class="btn">
             <router-link :to="{ name: 'SingleProduct' }">Buy now</router-link>
           </a>
         </div>

@@ -1,5 +1,4 @@
 <template>
-  <p>product</p>
   <div class="container">
     <div class="prod-card">
       <div class="row">
@@ -139,5 +138,5 @@
   opacity: 0.7;
 }
 
-/* @media screen and (min-width: 100px) and (max-width: 799px); */
+@media screen and (min-width: 100px) and (max-width: 799px);
 </style>

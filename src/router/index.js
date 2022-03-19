@@ -5,6 +5,9 @@ import Shop from "../views/Shop.vue";
 import SingleProduct from "../views/SingleProduct.vue";
 import Cart from "../views/Cart.vue";
 import Contact from "../views/Contact.vue";
+import ProfilePage from "../views/ProfilePage.vue";
+import Login from "../views/Login.vue";
+
 
 const routes = [
   {
@@ -37,6 +40,16 @@ const routes = [
     name: "Contact",
     component: Contact,
     props: true,
+  },
+  {
+    path: "/ProfilePage",
+    name: "ProfilePage",
+    component: ProfilePage,
+  },
+  {
+    path: "/Login",
+    name: "Login",
+    component: Login,
   },
 ];
 

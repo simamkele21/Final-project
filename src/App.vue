@@ -24,7 +24,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #8394a5;
-  background-color: #4e4a53;
+  background-color: #262527;
   height: 100vh;
 }
 
@@ -34,17 +34,18 @@ export default {
 
 #nav a {
   font-weight: bold;
-  color: #a1a4a8;
+  color: #5d6774;
 }
 
 #nav a.router-link-exact-active {
-  color: #bac4bf;
+  color: #transparent;
 }
 
 @media only screen and (max-width: 600px) {
   #nav {
     padding: 0px;
-    background-color: rgb(219, 219, 189);
+    color: #5d6774;
+    background-color: #262527;
   }
 }
 </style>
