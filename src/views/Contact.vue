@@ -1,9 +1,8 @@
 <template>
-  <div class="about">
     <div class="container">
       <div class="row">
         <div class="col-md-5 text-center">
-          <div id="map">
+          <div id="details">
             <h1>CONTACT US</h1>
             <p>Cape Town South Africa</p>
             <p>hocic14062@xindax.com</p>
@@ -48,7 +47,6 @@
         </div>
       </div>
     </div>
-  </div>
 </template>
 
 <script>
@@ -58,15 +56,16 @@ export default {};
 .container {
   /* border: 1px solid; */
   margin-top: 5.5em;
-    background: rgb(61, 59, 59);
+  background: rgb(73, 70, 70);
+  border-radius: 7px;
 
 }
 
-#map {
+#details {
   height: 0;
-  overflow: hidden;
+  overflow: none;
   padding-bottom: 22.25%;
-  padding-top: 100px;
+  margin-top: 190px;
   position: relative;
 }
 img {

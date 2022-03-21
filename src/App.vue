@@ -37,10 +37,6 @@ export default {
   color: #5d6774;
 }
 
-#nav a.router-link-exact-active {
-  color: #transparent;
-}
-
 @media only screen and (max-width: 600px) {
   #nav {
     padding: 0px;

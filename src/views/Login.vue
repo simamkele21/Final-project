@@ -1,173 +1,190 @@
 <template>
-<div class="container bootstrap snippets bootdey">
+<div class="login-wrap">
+	<div class="login-html">
+		<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
+		<input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+		<div class="login-form">
+			<div class="sign-in-htm">
+				<div class="group">
+					<label for="user" class="label">Username</label>
+					<input id="user" type="text" class="input">
+				</div>
+				<div class="group">
+					<label for="pass" class="label">Password</label>
+					<input id="pass" type="password" class="input" data-type="password">
+				</div>
+				<div class="group">
+					<input id="check" type="checkbox" class="check" checked>
+					<label for="check"><span class="icon"></span> Keep me Signed in</label>
+				</div>
+				<div class="group">
+					<input type="submit" class="button" value="Sign In">
+				</div>
+				<div class="hr"></div>
+				<div class="foot-lnk">
+					<a href="#forgot">Forgot Password?</a>
+				</div>
+			</div>
+			<div class="sign-up-htm">
+				<div class="group">
+					<label for="user" class="label">Username</label>
+					<input id="user" type="text" class="input">
+				</div>
+				<div class="group">
+					<label for="pass" class="label">Password</label>
+					<input id="pass" type="password" class="input" data-type="password">
+				</div>
+				<div class="group">
+					<label for="pass" class="label">Repeat Password</label>
+					<input id="pass" type="password" class="input" data-type="password">
+				</div>
+				<div class="group">
+					<label for="pass" class="label">Email Address</label>
+					<input id="pass" type="text" class="input">
+				</div>
+				<div class="group">
+					<input type="submit" class="button" value="Sign Up">
+				</div>
+				<div class="hr"></div>
 
-  <div style="height:auto;min-height:300px;" class="jumbotron">
-    <div class="col-md-4">
-       <img class="img-responsive center-block img-user" src="https://bootdey.com/img/Content/Manbrown2.png"> 
-    </div>
-    <div class="col-md-6 form-content">
-      <form accept-charset="utf-8" method="post" id="UserLoginForm" class="form-signin" action="">    	
-        <h1 class="form-signin-heading text-muted">Login</h1>
-        <input type="text" id="username" autofocus="autofocus" placeholder="Username" class="form-control" name="username">
-        <input type="password" id="password" placeholder="Password" class="form-control" name="password">			
-        <button type="button" class="btn btn-lg btn-info btn-block">
-          <i class="fa fa-share"></i>
-          Login
-        </button>
-      </form>    
-    </div>
-  </div>
+			</div>
+		</div>
+	</div>
 </div>
-
 </template>
 
 <style scoped>
-.img-user{
-  margin-top: 40px;
+.login-wrap{
+	width:100%;
+	margin:auto;
+	max-width:525px;
+	min-height:670px;
+	position:relative;
+	box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
+}
+.login-html{
+	width:100%;
+	height:100%;
+	position:absolute;
+	padding:90px 70px 50px 70px;
+	background:transparent;
+}
+.login-html .sign-in-htm,
+.login-html .sign-up-htm{
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	position:absolute;
+	transform:rotateY(180deg);
+	backface-visibility:hidden;
+	transition:all .4s linear;
+}
+.login-html .sign-in,
+.login-html .sign-up,
+.login-form .group .check{
+	display:none;
+}
+.login-html .tab,
+.login-form .group .label,
+.login-form .group .button{
+	text-transform:uppercase;
+}
+.login-html .tab{
+	font-size:22px;
+	margin-right:15px;
+	padding-bottom:5px;
+	margin:0 15px 10px 0;
+	display:inline-block;
+	border-bottom:2px solid transparent;
+}
+.login-html .sign-in:checked + .tab,
+.login-html .sign-up:checked + .tab{
+	color:#fff;
+	border-color:transparent;
+}
+.login-form{
+	min-height:345px;
+	position:relative;
+	perspective:1000px;
+	transform-style:preserve-3d;
+}
+.login-form .group{
+	margin-bottom:15px;
+}
+.login-form .group .label,
+.login-form .group .input,
+.login-form .group .button{
+	width:100%;
+	color:#fff;
+	display:block;
+}
+.login-form .group .input,
+.login-form .group .button{
+	border:none;
+	padding:15px 20px;
+	border-radius:25px;
+	background:rgba(255,255,255,.1);
 }
 
-.jumbotron label {
-    font-size:12px;    
+.login-form .group .label{
+	color:#aaa;
+	font-size:12px;
+}
+.login-form .group .button{
+	background:#1161ee;
+}
+.login-form .group label .icon{
+	width:15px;
+	height:15px;
+	border-radius:2px;
+	position:relative;
+	display:inline-block;
+	background:rgba(255,255,255,.1);
+}
+.login-form .group label .icon:before,
+.login-form .group label .icon:after{
+	content:'';
+	width:10px;
+	height:2px;
+	background:#fff;
+	position:absolute;
+	transition:all .2s ease-in-out 0s;
+}
+.login-form .group label .icon:before{
+	left:3px;
+	width:5px;
+	bottom:6px;
+	transform:scale(0) rotate(0);
+}
+.login-form .group label .icon:after{
+	top:6px;
+	right:0;
+	transform:scale(0) rotate(0);
+}
+.login-form .group .check:checked + label{
+	color:#fff;
+}
+.login-form .group .check:checked + label .icon{
+	background:#1161ee;
+}
+.login-form .group .check:checked + label .icon:before{
+	transform:scale(1) rotate(45deg);
+}
+.login-form .group .check:checked + label .icon:after{
+	transform:scale(1) rotate(-45deg);
+}
+.login-html .sign-in:checked + .tab + .sign-up + .tab + .login-form .sign-in-htm{
+	transform:rotate(0);
+}
+.login-html .sign-up:checked + .tab + .login-form .sign-up-htm{
+	transform:rotate(0);
 }
 
-.reg-icon{
-    color:#5bc0de;
-    font-weight:bold;
+.hr{
+	height:2px;
+	margin:60px 0 50px 0;
+	background:rgba(255,255,255,.2);
 }
 
-.nav-pills>li.active>a, 
-.nav-pills>li.active>a:hover, 
-.nav-pills>li.active>a:focus {
-    color: #fff;
-    background-color: #5bc0de;
-}
-
-.prj-name{
-    font-weight:bold;
-    text-shadow: 0 2px 2px #eee;
-    color:#5bc0de;
-}
-
-.header,
-.marketing,
-.footer {
-  padding-right: 15px;
-  padding-left: 15px;
-}
-
-.header {
-  border-bottom: 1px solid #e5e5e5;
-}
-
-.header h3 {
-  padding-bottom: 19px;
-  margin-top: 0;
-  margin-bottom: 0;
-  line-height: 40px;
-}
-
-.footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
-}
-
-@media (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
-}
-.container-narrow > hr {
-  margin: 30px 0;
-}
-
-.jumbotron {
-  text-align: center;
-  padding:0px !important; 
-}
-
-.marketing {
-  margin: 40px 0;
-}
-.marketing p + h4 {
-  margin-top: 28px;
-}
-
-
-@media screen and (min-width: 768px) {
-  .header,
-  .marketing,
-  .footer {
-    padding-right: 0;
-    padding-left: 0;
-  }
-
-  .header {
-    margin-bottom: 30px;
-  }
-
-  .jumbotron {
-    border-bottom: 0;
-  }
-}
-
-.btn {
- outline:0;
- border:none;
- border-top:none;
- border-bottom:none;
- border-left:none;
- border-right:none;
- box-shadow:inset 2px -3px rgba(0,0,0,0.15);
-}
-.btn:focus {
- outline:0;
- -webkit-outline:0;
- -moz-outline:0;
-}
-.form-signin {
-  max-width: 280px;
-  margin: 0 auto;
-}
-.form-signin .form-signin-heading, .form-signin {
-  margin-bottom: 10px;
-}
-.form-signin .form-control {
-  position: relative;
-  font-size: 16px;
-  height: auto;
-  padding: 10px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-.form-signin .form-control:focus {
-  z-index: 2;
-}
-.form-signin input[type="text"] {
-  margin-bottom: -1px;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-  border-top-style: solid;
-  border-right-style: solid;
-  border-bottom-style: none;
-  border-left-style: solid;
-  border-color: #000;
-}
-.form-signin input[type="password"] {
-  margin-bottom: 10px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  border-top-style: none;
-  border-right-style: solid;
-  border-bottom-style: solid;
-  border-left-style: solid;
-  border-color: rgb(0,0,0);
-  border-top:1px solid rgba(0,0,0,0.08);
-}
-.form-signin-heading {
-  text-align: center;
-  text-shadow: 0 2px 2px rgba(0,0,0,0.5);
-  color:#5bc0de !important;
-}
 </style>

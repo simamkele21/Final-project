@@ -65,5 +65,8 @@
   width: 50%;
   height: 20px;
 }
-@media screen and (min-width: 100px) and (max-width: 799px);
+.btn{
+  background-color: rgb(190, 184, 184);
+}
+@media screen and (min-width: 100px) and (max-width: 799px){}
 </style>

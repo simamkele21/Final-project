@@ -10,8 +10,8 @@
           />
         </div>
         <div class="col-md-7">
-          <span>OUR LATEST STYLES</span>
-          <p>check our products out</p>
+          <h1>ITS NOT FASION ITS<span id="name">ARTISTICLY DEADLY</span></h1>
+          <h3>Check latest styles out</h3>
         </div>
       </div>
     </div>
@@ -32,7 +32,6 @@ export default {
 
 <style scoped>
 .container {
-  /* border: 1px solid; */
   margin-top: 4.5em;
 }
 .home {
@@ -41,5 +40,16 @@ export default {
 .img-thumbnail {
   height: 55vh;
 }
-@media screen and (min-width: 100px) and (max-width: 799px);
+#name{
+  font-weight: bold;
+  color: #85a9d8
+}
+.col-md-7{
+    margin-top: 8.5em;
+}
+
+@media screen and (max-width: 600px){
+
+}
+
 </style>
