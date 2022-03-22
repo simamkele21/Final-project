@@ -67,5 +67,5 @@
   height: 55vh;
 }
 
-@media screen and (min-width: 100px) and (max-width: 799px);
+/* @media screen and (min-width: 100px) and (max-width: 799px); */
 </style>
