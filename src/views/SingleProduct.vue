@@ -36,7 +36,7 @@
         <div class="col-12">
           <div class="card w-100">
             <div class="card-body">
-              <h5 class="card-title">Comments</h5>
+              <h5 class="card-title">Comment's</h5>
               <p class="card-text">
                 With supporting text below as a natural lead-in to additional
                 content.
@@ -138,6 +138,6 @@
   opacity: 0.7;
 }
 
-@media screen and (min-width: 100px) and (max-width: 799px){}
+@media screen and (min-width: 100px) and (max-width: 799px) {
+}
 </style>
-
