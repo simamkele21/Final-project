@@ -47,6 +47,7 @@
                   id="form16"
                   class="form-control"
                   data-mdb-showcounter="true"
+                  maxlength="50"
                 />
                 <label class="form-label" for="form16">Add comment</label>
                 <div class="form-helper"></div>
