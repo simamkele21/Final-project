@@ -1,52 +1,52 @@
 <template>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-5 text-center">
-          <div id="details">
-            <h1>CONTACT US</h1>
-            <p>Cape Town South Africa</p>
-            <p>hocic14062@xindax.com</p>
-            <p>123-456-7890</p>
-          </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5 text-center">
+        <div id="details">
+          <h1>CONTACT US</h1>
+          <p>Cape Town South Africa</p>
+          <p>hocic14062@xindax.com</p>
+          <p>123-456-7890</p>
         </div>
-        <div class="col-md-7">
-          <div class="contact-form">
-            <form @submit.prevent="handleSubmit">
-              <label>Name</label>
-              <input
-                type="name"
-                required
-                v-model="name"
-                placeholder="Enter name"
-              />
-              <label>Last Name</label>
-              <input
-                type="surname"
-                required
-                v-model="surname"
-                placeholder="Enter last name"
-              />
-              <label>Email</label>
-              <input
-                type="email"
-                required
-                v-model="email"
-                placeholder="Enter email"
-              />
-              <label>Messege</label>
-              <input
-                type="message"
-                v-model="message"
-                placeholder="Enter message"
-              />
-              <div class="submit">
-                <button>Submit</button>
-              </div>
-            </form>
-          </div>
+      </div>
+      <div class="col-md-7">
+        <div class="contact-form">
+          <form @submit.prevent="handleSubmit">
+            <label>Name</label>
+            <input
+              type="name"
+              required
+              v-model="name"
+              placeholder="Enter name"
+            />
+            <label>Last Name</label>
+            <input
+              type="surname"
+              required
+              v-model="surname"
+              placeholder="Enter last name"
+            />
+            <label>Email</label>
+            <input
+              type="email"
+              required
+              v-model="email"
+              placeholder="Enter email"
+            />
+            <label>Messege</label>
+            <input
+              type="message"
+              v-model="message"
+              placeholder="Enter message"
+            />
+            <div class="submit">
+              <button>Submit</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
+  </div>
 </template>
 
 <script>
@@ -56,9 +56,8 @@ export default {};
 .container {
   /* border: 1px solid; */
   margin-top: 5.5em;
-  background: rgb(73, 70, 70);
+  background: transparent;
   border-radius: 7px;
-
 }
 
 #details {
@@ -74,7 +73,7 @@ img {
 form {
   max-width: 420px;
   margin: 30px auto;
-    background: rgb(61, 59, 59);
+  background: rgb(61, 59, 59);
   text-align: left;
   padding: 40px;
   border-radius: 10px;

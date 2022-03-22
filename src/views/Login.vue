@@ -1,190 +1,193 @@
 <template>
-<div class="login-wrap">
-	<div class="login-html">
-		<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
-		<input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
-		<div class="login-form">
-			<div class="sign-in-htm">
-				<div class="group">
-					<label for="user" class="label">Username</label>
-					<input id="user" type="text" class="input">
-				</div>
-				<div class="group">
-					<label for="pass" class="label">Password</label>
-					<input id="pass" type="password" class="input" data-type="password">
-				</div>
-				<div class="group">
-					<input id="check" type="checkbox" class="check" checked>
-					<label for="check"><span class="icon"></span> Keep me Signed in</label>
-				</div>
-				<div class="group">
-					<input type="submit" class="button" value="Sign In">
-				</div>
-				<div class="hr"></div>
-				<div class="foot-lnk">
-					<a href="#forgot">Forgot Password?</a>
-				</div>
-			</div>
-			<div class="sign-up-htm">
-				<div class="group">
-					<label for="user" class="label">Username</label>
-					<input id="user" type="text" class="input">
-				</div>
-				<div class="group">
-					<label for="pass" class="label">Password</label>
-					<input id="pass" type="password" class="input" data-type="password">
-				</div>
-				<div class="group">
-					<label for="pass" class="label">Repeat Password</label>
-					<input id="pass" type="password" class="input" data-type="password">
-				</div>
-				<div class="group">
-					<label for="pass" class="label">Email Address</label>
-					<input id="pass" type="text" class="input">
-				</div>
-				<div class="group">
-					<input type="submit" class="button" value="Sign Up">
-				</div>
-				<div class="hr"></div>
-
-			</div>
-		</div>
-	</div>
-</div>
+  <div class="container">
+    <div class="login">
+      <div class="main" onclick="clickme()">
+        <div class="equal-col">
+          <h2>Sign In</h2>
+          <div class="form">
+            <form action="/">
+              <input type="text" class="field" placeholder="Username" /><br />
+              <input
+                type="password"
+                class="field"
+                placeholder="password"
+              /><br />
+              <input type="submit" class="field login1" value="LOGIN" /><br />
+              <div class="last">
+                <input type="checkbox" class="check" checked /><span class="me"
+                  >Remember me</span
+                >
+                <!-- <span class="forgot">Forgot Password?</span> -->
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="border"></div>
+        <div class="equal-col second">
+          <h2>Create Account</h2>
+          <div class="form2">
+            <form action="">
+              <input
+                type="text"
+                placeholder="First Name"
+                class="name-field"
+              /><input
+                type="text"
+                placeholder="Last Name"
+                class="name-field"
+              /><br />
+              <input
+                type="password"
+                class="fields pass"
+                placeholder="Password"
+              /><br />
+              <input
+                type="email"
+                class="fields"
+                placeholder="Email Address"
+              /><br />
+              <input
+                type="submit"
+                class="fields account"
+                value="CREATE ACCOUNT"
+              /><br />
+              <span class="terms"
+                >By Creating an Account You Agree to Our Terms</span
+              >
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
-
+<script>
+function clickme() {
+  window.location.href = "";
+}
+</script>
 <style scoped>
-.login-wrap{
-	width:100%;
-	margin:auto;
-	max-width:525px;
-	min-height:670px;
-	position:relative;
-	box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
+.login {
+  height: 66vh;
 }
-.login-html{
-	width:100%;
-	height:100%;
-	position:absolute;
-	padding:90px 70px 50px 70px;
-	background:transparent;
+.container {
+  margin-top: 5em;
+  background: transparent;
+  border-radius: 7px;
 }
-.login-html .sign-in-htm,
-.login-html .sign-up-htm{
-	top:0;
-	left:0;
-	right:0;
-	bottom:0;
-	position:absolute;
-	transform:rotateY(180deg);
-	backface-visibility:hidden;
-	transition:all .4s linear;
+.main {
+  width: 600px;
+  height: 400px;
+  background: transparent;
+  box-shadow: 2px 2px 10px black;
+  position: absolute;
+  margin-top: 95px;
+  margin-left: 370px;
 }
-.login-html .sign-in,
-.login-html .sign-up,
-.login-form .group .check{
-	display:none;
+.equal-col {
+  width: 298px;
+  height: 400px;
+  background: transparent;
+  float: left;
+  box-sizing: border-box;
+  padding-top: 60px;
 }
-.login-html .tab,
-.login-form .group .label,
-.login-form .group .button{
-	text-transform:uppercase;
+.border {
+  width: 0px;
+  height: 300px;
+  border: 1px solid rgb(181, 234, 243);
+  background: white;
+  float: left;
+  margin-top: 50px;
 }
-.login-html .tab{
-	font-size:22px;
-	margin-right:15px;
-	padding-bottom:5px;
-	margin:0 15px 10px 0;
-	display:inline-block;
-	border-bottom:2px solid transparent;
+h2 {
+  color: white;
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-.login-html .sign-in:checked + .tab,
-.login-html .sign-up:checked + .tab{
-	color:#fff;
-	border-color:transparent;
+.form {
+  width: 240px;
+  height: 300px;
+  /*             background: white; */
+  position: absolute;
+  left: 20px;
 }
-.login-form{
-	min-height:345px;
-	position:relative;
-	perspective:1000px;
-	transform-style:preserve-3d;
+.form2 {
+  width: 240px;
+  height: 250px;
+  position: absolute;
+  left: 40px;
 }
-.login-form .group{
-	margin-bottom:15px;
+.form .field {
+  width: 240px;
+  padding: 8px;
+  box-sizing: border-box;
+  outline: none;
+  background: transparent;
+  color: white;
+  margin-top: 15px;
+  border: 2px solid rgb(181, 234, 243);
 }
-.login-form .group .label,
-.login-form .group .input,
-.login-form .group .button{
-	width:100%;
-	color:#fff;
-	display:block;
+.form2 .name-field,
+.fields {
+  box-sizing: border-box;
+  width: 47%;
+  background: transparent;
+  padding: 8px;
+  outline: none;
+  border: 2px solid rgb(181, 234, 243);
+  position: relative;
+  top: 15px;
+  color: white;
 }
-.login-form .group .input,
-.login-form .group .button{
-	border:none;
-	padding:15px 20px;
-	border-radius:25px;
-	background:rgba(255,255,255,.1);
+.fields {
+  width: 100%;
+  top: 13px;
+  margin-top: 15px;
 }
-
-.login-form .group .label{
-	color:#aaa;
-	font-size:12px;
+.form2 .terms {
+  color: white;
+  font-size: 12px;
+  position: relative;
+  top: 20px;
 }
-.login-form .group .button{
-	background:#1161ee;
+.name-field:nth-child(2) {
+  right: -12px;
 }
-.login-form .group label .icon{
-	width:15px;
-	height:15px;
-	border-radius:2px;
-	position:relative;
-	display:inline-block;
-	background:rgba(255,255,255,.1);
+.second {
+  position: relative;
 }
-.login-form .group label .icon:before,
-.login-form .group label .icon:after{
-	content:'';
-	width:10px;
-	height:2px;
-	background:#fff;
-	position:absolute;
-	transition:all .2s ease-in-out 0s;
+::placeholder {
+  color: white;
 }
-.login-form .group label .icon:before{
-	left:3px;
-	width:5px;
-	bottom:6px;
-	transform:scale(0) rotate(0);
+.form .login1 {
+  background: rgb(64, 226, 255);
+  cursor: pointer;
 }
-.login-form .group label .icon:after{
-	top:6px;
-	right:0;
-	transform:scale(0) rotate(0);
+.form2 .account {
+  background: rgb(64, 226, 255);
+  cursor: pointer;
 }
-.login-form .group .check:checked + label{
-	color:#fff;
+.last {
+  position: relative;
+  width: 240px;
+  height: 100px;
+  color: white;
+  font-size: 13px;
 }
-.login-form .group .check:checked + label .icon{
-	background:#1161ee;
+.check {
+  width: 18px;
+  height: 18px;
+  margin-top: 10px;
 }
-.login-form .group .check:checked + label .icon:before{
-	transform:scale(1) rotate(45deg);
+.me {
+  position: absolute;
+  top: 12px;
+  margin-left: 5px;
 }
-.login-form .group .check:checked + label .icon:after{
-	transform:scale(1) rotate(-45deg);
+.forgot {
+  position: absolute;
+  right: 0px;
+  top: 12px;
 }
-.login-html .sign-in:checked + .tab + .sign-up + .tab + .login-form .sign-in-htm{
-	transform:rotate(0);
-}
-.login-html .sign-up:checked + .tab + .login-form .sign-up-htm{
-	transform:rotate(0);
-}
-
-.hr{
-	height:2px;
-	margin:60px 0 50px 0;
-	background:rgba(255,255,255,.2);
-}
-
 </style>

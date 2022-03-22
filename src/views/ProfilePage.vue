@@ -39,7 +39,6 @@
                 </nav>
             </div>
         </div>
-        <!-- Profile Settings-->
         <div class="col-lg-8 pb-5">
             <form class="row">
                 <div class="col-md-6">

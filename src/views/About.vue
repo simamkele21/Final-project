@@ -31,7 +31,7 @@
 .about {
   height: 66vh;
 }
-.btn{
+.btn {
   background-color: rgb(190, 184, 184);
 }
 </style>

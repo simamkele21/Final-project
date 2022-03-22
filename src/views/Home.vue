@@ -10,7 +10,7 @@
           />
         </div>
         <div class="col-md-7">
-          <h1>ITS NOT FASION ITS<span id="name">ARTISTICLY DEADLY</span></h1>
+          <h1>ITS NOT FASION ITS<span id="name"> ARTISTICLY DEADLY</span></h1>
           <h3>Check latest styles out</h3>
         </div>
       </div>
@@ -40,16 +40,14 @@ export default {
 .img-thumbnail {
   height: 55vh;
 }
-#name{
+#name {
   font-weight: bold;
-  color: #85a9d8
+  color: #85a9d8;
 }
-.col-md-7{
-    margin-top: 8.5em;
-}
-
-@media screen and (max-width: 600px){
-
+.col-md-7 {
+  margin-top: 8.5em;
 }
 
+@media screen and (max-width: 600px) {
+}
 </style>

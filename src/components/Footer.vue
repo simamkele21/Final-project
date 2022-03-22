@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-dark text-center text-white footer">
+  <footer class="text-center text-white footer">
     <!-- Grid container -->
     <div class="container p-4 pb-0">
       <!-- Section: Social media -->
@@ -47,7 +47,10 @@
 </template>
 
 <style scoped>
+.footer {
+  /* background-color: rgb(47, 47, 42); */
+}
 .btn {
-  background-color:transparent;
+  background-color: transparent;
 }
 </style>
