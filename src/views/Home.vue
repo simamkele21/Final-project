@@ -10,7 +10,9 @@
           />
         </div>
         <div class="col-md-7">
-          <h1>ITS NOT FASION ITS<span id="name"> ARTISTICLY DEADLY</span></h1>
+          <h1>
+            IT'S NOT FASHION IT'S<span id="name"> ARTISTICLY DEADLY</span>
+          </h1>
           <h3>Check latest styles out</h3>
         </div>
       </div>
@@ -35,7 +37,7 @@ export default {
   margin-top: 4.5em;
 }
 .home {
-  height: 67vh;
+  height: 77vh;
 }
 .img-thumbnail {
   height: 55vh;

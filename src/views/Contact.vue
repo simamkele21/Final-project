@@ -1,4 +1,5 @@
 <template>
+<div class="contact">
   <div class="container">
     <div class="row">
       <div class="col-md-5 text-center">
@@ -47,12 +48,16 @@
       </div>
     </div>
   </div>
+  </div>
 </template>
 
 <script>
 export default {};
 </script>
 <style scoped>
+.contact{
+  height: 76vh;
+}
 .container {
   /* border: 1px solid; */
   margin-top: 5.5em;

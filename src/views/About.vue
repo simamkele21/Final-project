@@ -29,7 +29,7 @@
   margin-top: 5.5em;
 }
 .about {
-  height: 66vh;
+  height: 77vh;
 }
 .btn {
   background-color: rgb(190, 184, 184);

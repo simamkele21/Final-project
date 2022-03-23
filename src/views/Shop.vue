@@ -1,16 +1,15 @@
 <template>
   <div class="shop">
-    <div class="container">
-      <div class="card">
+    <div class="container" v-for="product in products" :key="product.id">
+      <div class="card" v-if="product">
         <div
           class="bg-image hover-overlay ripple"
           data-mdb-ripple-color="light"
         >
-          <img
-            src="https://i.postimg.cc/c4zbtsQj/Artisticly.png"
-            class="img-fluid"
-          />
-          <router-link :to="{ name: 'SingleProduct' }">
+          <img :src="product.image" class="img-fluid" :alt="product.name" />
+          <router-link
+            :to="{ name: 'SingleProduct', params: { id: product._id } }"
+          >
             <div
               class="mask"
               style="background-color: rgba(251, 251, 251, 0.15)"
@@ -18,39 +17,48 @@
           ></router-link>
         </div>
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </p>
+          <h5 class="card-title">{{ product.name }}</h5>
+          <p class="card-text">{{ product.price }}</p>
           <a class="btn">
-            <router-link :to="{ name: 'SingleProduct' }">Buy now</router-link>
+            <router-link
+              :to="{ name: 'SingleProduct', params: { id: product._id } }"
+              >Buy now</router-link
+            >
           </a>
         </div>
       </div>
-      <!-- <div class="card">
-        <div class="img">
-          <img src="https://i.postimg.cc/c4zbtsQj/Artisticly.png" alt="" />
-        </div>
-        <div class="content">
-          <h3>name</h3>
-          <h2>price</h2>
-          <a href="#!" class="btn">
-            <router-link :to="{ name: 'SingleProduct' }">Buy now</router-link>
-          </a>
-        </div>
-      </div> -->
     </div>
   </div>
 </template>
+<script>
+export default {
+  name: "Products",
+
+  data() {
+    return {
+      page: "Product",
+      products: [],
+    };
+  },
+  mounted() {
+    fetch("https://artisticly-deadly-heroku.herokuapp.com/Products")
+      .then((res) => res.json())
+      .then((data) => {
+        this.products = data;
+        console.log(this.products);
+      });
+  },
+};
+</script>
 
 <style scoped>
 .container {
   /* border: 1px solid; */
   margin-top: 5.5em;
 }
-.about {
-  height: 66vh;
+.shop {
+  height: 74vh;
+  display: flex;
 }
 .card {
   position: relative;
@@ -65,8 +73,9 @@
   width: 50%;
   height: 20px;
 }
-.btn{
+.btn {
   background-color: rgb(190, 184, 184);
 }
-@media screen and (min-width: 100px) and (max-width: 799px){}
+@media screen and (min-width: 100px) and (max-width: 799px) {
+}
 </style>

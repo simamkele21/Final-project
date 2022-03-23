@@ -59,6 +59,26 @@
     </div>
   </div>
 </template>
+<script>
+// export default {
+//   data() {
+//     return {
+//       product: {},
+//     };
+//   },
+//   mounted() {
+//     fetch(
+//       "https://artisticly-deadly-heroku.herokuapp.com/Products/" +
+//         this.$route.params.id
+//     )
+//       .then((res) => res.json())
+//       .then((data) => {
+//         this.products = data;
+//         console.log(this.product);
+//       });
+//   },
+// };
+</script>
 
 <style scoped>
 .container {
