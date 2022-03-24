@@ -141,7 +141,7 @@
   font-size: 40px;
   font-weight: 700;
 }
-
+    
 .add {
   width: 260px;
   font-size: 24px;

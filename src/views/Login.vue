@@ -5,8 +5,8 @@
         <div class="equal-col">
           <h2>Sign In</h2>
           <div class="form">
-            <form action="/">
-              <input type="text" class="field" placeholder="Username" /><br />
+            <form @submit="handleLogin" :validation-schema="schema">
+              <input name="email" type="text" class="field" placeholder="Email" /><br />
               <input
                 type="password"
                 class="field"
@@ -62,9 +62,56 @@
   </div>
 </template>
 <script>
-function clickme() {
-  window.location.href = "";
-}
+// import { Form, Field, ErrorMessage } from "vee-validate"
+// import * as yup from "yup";
+// export default {
+//   name: "Login",
+//   components: {
+//     Form,
+//     Field,
+//     ErrorMessage,
+//   },
+//     data() {
+//     const schema = yup.object().shape({
+//     name: yup.string().required("email is required"),
+//     password: yup.string().required("Password is required")
+//     });
+//     return {
+//       loading: false,
+//       message: "",
+//       schema,
+//     };
+//   },
+//     computed: {
+//     loggedIn() {
+//       return this.$store.state.auth.status.loggedIn;
+//     },
+//   },
+//   created() {
+//     if (this.loggedIn) {
+//       this.$router.push("/ProfilePage");
+//     };
+// },
+//   methods: {
+//     handleLogin(client) {
+//       this.loading = true;
+//       this.$store.dispatch("auth/login", client).then(
+//         () => {
+//           this.$router.push("/ProfilePage");
+//         },
+//         (error) => {
+//           this.loading = false;
+//           this.message =
+//             (error.response &&
+//               error.response.data &&
+//               error.response.data.message) ||
+//             error.message ||
+//             error.toString();
+//         }
+//       );
+//     },
+//   },
+// }
 </script>
 <style scoped>
 .login {
