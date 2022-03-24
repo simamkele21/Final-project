@@ -41,7 +41,7 @@ export default {
     };
   },
   mounted() {
-    fetch("https://artisticly-deadly-heroku.herokuapp.com/Products")
+    fetch("https://artisticly-deadly-heroku.herokuapp.com/Products/")
       .then((res) => res.json())
       .then((data) => {
         this.products = data;

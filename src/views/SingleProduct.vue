@@ -4,28 +4,64 @@
       <div class="row">
         <div class="col-5">
           <div class="img">
-            <img src="https://picsum.photos/id/318/320" alt="shirt" />
+            <img :src="product.image" :alt="product.name" />
           </div>
         </div>
         <div class="col-7">
           <div class="prod-info">
-            <h2 class="prod-title">Original T-Shirt From Shop</h2>
-            <span class="desc">Awesome T-Shirt For Men</span>
-            <span class="price"><i class="fas fa-dollar-sign"></i> 449</span>
+            <h2 class="prod-title">{{ product.name }}</h2>
+            <span class="desc">{{ product.description }}</span>
+            <span class="price">R{{ product.price }}</span>
             <h3>Sizes</h3>
-            <span>
-              <a href="#">M</a>
-              <a href="#">L</a>
-              <a href="#">XL</a>
-              <a href="#">XXL</a>
-            </span>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="inlineRadioOptions"
+                id="inlineRadio1"
+                value="option1"
+              />
+              <label class="form-check-label" for="inlineRadio1">M</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="inlineRadioOptions"
+                id="inlineRadio2"
+                value="option2"
+              />
+              <label class="form-check-label" for="inlineRadio2">L</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="inlineRadioOptions"
+                id="inlineRadio2"
+                value="option2"
+              />
+              <label class="form-check-label" for="inlineRadio2">XL</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="inlineRadioOptions"
+                id="inlineRadio2"
+                value="option2"
+              />
+              <label class="form-check-label" for="inlineRadio2">L</label>
+            </div>
             <h3>Colors</h3>
-            <span>
-              <a href="#">Black</a>
-              <a href="#">White</a>
-              <a href="#">Red</a>
-              <a href="#">Blue</a>
-            </span>
+            <form action="/action_page.php">
+              <select name="Color" id="Color">
+                <option value="Black">Black</option>
+                <option value="White">White</option>
+                <option value="Blue">Blue</option>
+                <option value="Brown">Brown</option>
+              </select>
+            </form>
             <a href="#" class="add"
               ><i class="fas fa-cart-plus"></i> Add to Cart</a
             >
@@ -38,8 +74,8 @@
             <div class="card-body">
               <h5 class="card-title">Comment's</h5>
               <p class="card-text">
-                With supporting text below as a natural SFB lead-in to
-                additional content.
+                With supporting text below as a natural lead-in to additional
+                content.
               </p>
               <div class="form-outline">
                 <input
@@ -60,24 +96,22 @@
   </div>
 </template>
 <script>
-// export default {
-//   data() {
-//     return {
-//       product: {},
-//     };
-//   },
-//   mounted() {
-//     fetch(
-//       "https://artisticly-deadly-heroku.herokuapp.com/Products/" +
-//         this.$route.params.id
-//     )
-//       .then((res) => res.json())
-//       .then((data) => {
-//         this.products = data;
-//         console.log(this.product);
-//       });
-//   },
-// };
+export default {
+  data() {
+    return {
+      id: this.$route.params.id,
+      product: {},
+    };
+  },
+  mounted() {
+    fetch("https://artisticly-deadly-heroku.herokuapp.com/Products/" + this.id)
+      .then((res) => res.json())
+      .then((data) => {
+        this.product = data;
+        console.log(data);
+      });
+  },
+};
 </script>
 
 <style scoped>
@@ -93,7 +127,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #fff;
+  background-color: rgb(230, 223, 223);
 }
 
 .img {
@@ -103,6 +137,7 @@
 }
 .img img {
   width: 100%;
+  margin: 30px;
 }
 
 .prod-title {
