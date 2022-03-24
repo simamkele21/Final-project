@@ -38,8 +38,8 @@
             <div class="card-body">
               <h5 class="card-title">Comment's</h5>
               <p class="card-text">
-                With supporting text below as a natural lead-in to additional
-                content.
+                With supporting text below as a natural SFB lead-in to
+                additional content.
               </p>
               <div class="form-outline">
                 <input
@@ -141,7 +141,7 @@
   font-size: 40px;
   font-weight: 700;
 }
-    
+
 .add {
   width: 260px;
   font-size: 24px;
