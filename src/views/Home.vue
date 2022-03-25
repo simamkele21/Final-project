@@ -50,6 +50,9 @@ export default {
   margin-top: 8.5em;
 }
 
-@media screen and (max-width: 600px) {
+@media only screen and (max-width: 600px) {
+  .home {
+    display: flex;
+  }
 }
 </style>

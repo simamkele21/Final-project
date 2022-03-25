@@ -52,7 +52,39 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      name: '',
+      surname: '',
+      email: '',
+      message: '',
+    }
+  },
+  methods: {
+    handleSubmit() {
+      console.log(this.name, this.surname, this.email, this.message),
+      fetch({ method: 'POST',
+        body: JSON.stringify({
+          name: this.name,
+          surname: this.surname,
+          email: this.email, 
+          message: this.message,
+        }),
+        headers: {'Content-Type': 'application/json; chars=UTF-8'},
+        })
+        .then((response) => response.json())
+        .then((json) =>{
+          alart(json.msg)
+          this.name = '',
+          this.surname = '',
+          this.email = '',
+          this.message =  ''
+        })
+          .catch((e) => alert(e.msg));
+      }
+    },
+  }
 </script>
 <style scoped>
 .contact {

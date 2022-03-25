@@ -26,7 +26,7 @@
         <div class="equal-col second">
           <h2>Create Account</h2>
           <div class="form2">
-            <form action="">
+            <form @submit="handleLogin" :validation-schema="schema">
               <input
                 type="text"
                 placeholder="First Name"
@@ -62,56 +62,73 @@
   </div>
 </template>
 <script>
-// import { Form, Field, ErrorMessage } from "vee-validate"
-// import * as yup from "yup";
-// export default {
-//   name: "Login",
-//   components: {
-//     Form,
-//     Field,
-//     ErrorMessage,
-//   },
-//     data() {
-//     const schema = yup.object().shape({
-//     name: yup.string().required("email is required"),
-//     password: yup.string().required("Password is required")
-//     });
-//     return {
-//       loading: false,
-//       message: "",
-//       schema,
-//     };
-//   },
-//     computed: {
-//     loggedIn() {
-//       return this.$store.state.auth.status.loggedIn;
-//     },
-//   },
-//   created() {
-//     if (this.loggedIn) {
-//       this.$router.push("/ProfilePage");
-//     };
-// },
-//   methods: {
-//     handleLogin(client) {
-//       this.loading = true;
-//       this.$store.dispatch("auth/login", client).then(
-//         () => {
-//           this.$router.push("/ProfilePage");
-//         },
-//         (error) => {
-//           this.loading = false;
-//           this.message =
-//             (error.response &&
-//               error.response.data &&
-//               error.response.data.message) ||
-//             error.message ||
-//             error.toString();
-//         }
-//       );
-//     },
-//   },
-// }
+import { Form, Field, ErrorMessage } from "vee-validate"
+import * as yup from "yup";
+import Client from '../models/ClientModel'
+
+export default {
+  name: "Login",
+  name: "Register",
+  components: {
+    Form,
+    Field,
+    ErrorMessage,
+  },
+    data() {
+      const schema = yup.object().shape({
+      name: yup
+        .string()
+        .required("name is required!")
+        .min(3, "Must be at least 3 characters!")
+        .max(20, "Must be maximum 20 characters!"),
+      email: yup
+        .string()
+        .required("Email is required!")
+        .email("Email is invalid!")
+        .max(50, "Must be maximum 50 characters!"),
+      password: yup
+        .string()
+        .required("Password is required!")
+        .min(6, "Must be at least 6 characters!")
+        .max(40, "Must be maximum 40 characters!"),
+    });
+        return {
+      client: new Client('',''),
+      loading: false,
+      message: "",
+      schema,
+  };
+    },
+    computed: {
+    loggedIn() {
+      return this.$store.state.auth.status.loggedIn;
+    },
+  },
+  created() {
+    if (this.loggedIn) {
+      this.$router.push("/ProfilePage");
+    };
+},
+  methods: {
+    handleLogin(client) {
+      this.loading = true;
+      this.$store.dispatch("/login", client).then(
+        () => {
+          this.$router.push("/ProfilePage");
+        },
+        (error) => {
+          this.loading = false;
+          this.message =
+            (error.response &&
+              error.response.data &&
+              error.response.data.message) ||
+            error.message ||
+            error.toString();
+        }
+      );
+    },
+  },
+}
 </script>
 <style scoped>
 .login {
@@ -236,5 +253,11 @@ h2 {
   position: absolute;
   right: 0px;
   top: 12px;
+}
+
+@media only screen and (max-width: 600px) {
+  .login {
+    display: flex;
+  }
 }
 </style>
