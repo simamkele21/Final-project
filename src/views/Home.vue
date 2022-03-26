@@ -51,8 +51,11 @@ export default {
 }
 
 @media only screen and (max-width: 600px) {
-  .home {
-    display: flex;
-  }
+.container {
+  margin-top: 2em;
+}
+.home {
+  height: 100vh;
+}
 }
 </style>

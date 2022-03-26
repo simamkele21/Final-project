@@ -4,7 +4,7 @@
       <div class="row d-flex justify-content-center">
         <div class="list-group col-8">
           <a
-            v-for="product in cart"
+            v-for="product in Cart"
             :key="product.id"
             href="#"
             class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
@@ -58,11 +58,11 @@ export default {
       name: "",
       email: "",
       message: "",
-      cart: JSON.parse(localStorage.getItem("cart")),
+      Cart: JSON.parse(localStorage.getItem("Cart")),
     };
   },
   mounted() {
-    fetch("https://artisticly-deadly-heroku.herokuapp.com/Products/")
+    fetch("https://artisticly-deadly-heroku.herokuapp.com/Cart/:token")
       .then((res) => res.json())
       .then((data) => {
         this.products = data;

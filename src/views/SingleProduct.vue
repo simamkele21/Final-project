@@ -63,7 +63,7 @@
               </select>
             </form>
             <a @click="AddToCart()" class="add"
-              ><i class="fas fa-cart-plus"></i> Add to Cart</a
+              ><i class="fas fa-Cart-plus"></i> Add to Cart</a
             >
           </div>
         </div>
