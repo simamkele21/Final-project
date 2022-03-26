@@ -1,12 +1,17 @@
 <template>
   <div class="container">
     <div class="login">
-      <div class="main" onclick="clickme()">
+      <div class="main" onclick="signin()">
         <div class="equal-col">
           <h2>Sign In</h2>
           <div class="form">
             <form @submit="handleLogin" :validation-schema="schema">
-              <input name="email" type="text" class="field" placeholder="Email" /><br />
+              <input
+                name="email"
+                type="text"
+                class="field"
+                placeholder="Email"
+              /><br />
               <input
                 type="password"
                 class="field"
@@ -62,9 +67,9 @@
   </div>
 </template>
 <script>
-import { Form, Field, ErrorMessage } from "vee-validate"
+import { Form, Field, ErrorMessage } from "vee-validate";
 import * as yup from "yup";
-import Client from '../models/ClientModel'
+import Client from "../models/ClientModel";
 
 export default {
   name: "Login",
@@ -74,8 +79,8 @@ export default {
     Field,
     ErrorMessage,
   },
-    data() {
-      const schema = yup.object().shape({
+  data() {
+    const schema = yup.object().shape({
       name: yup
         .string()
         .required("name is required!")
@@ -92,14 +97,14 @@ export default {
         .min(6, "Must be at least 6 characters!")
         .max(40, "Must be maximum 40 characters!"),
     });
-        return {
-      client: new Client('',''),
+    return {
+      client: new Client("", ""),
       loading: false,
       message: "",
       schema,
-  };
-    },
-    computed: {
+    };
+  },
+  computed: {
     loggedIn() {
       return this.$store.state.auth.status.loggedIn;
     },
@@ -107,12 +112,12 @@ export default {
   created() {
     if (this.loggedIn) {
       this.$router.push("/ProfilePage");
-    };
-},
+    }
+  },
   methods: {
     handleLogin(client) {
       this.loading = true;
-      this.$store.dispatch("/login", client).then(
+      this.$store.dispatch("auth/Login", client).then(
         () => {
           this.$router.push("/ProfilePage");
         },
@@ -128,7 +133,7 @@ export default {
       );
     },
   },
-}
+};
 </script>
 <style scoped>
 .login {

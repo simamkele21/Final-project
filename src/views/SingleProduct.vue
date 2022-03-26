@@ -54,7 +54,7 @@
               <label class="form-check-label" for="inlineRadio2">L</label>
             </div>
             <h3>Colors</h3>
-            <form action="/action_page.php">
+            <form action="color">
               <select name="Color" id="Color">
                 <option value="Black">Black</option>
                 <option value="White">White</option>
@@ -96,17 +96,17 @@
   </div>
 </template>
 <script>
-import Cart from '../views/Cart.vue';
+import Cart from "../views/Cart.vue";
 
 export default {
   data() {
     return {
       id: this.$route.params.id,
       product: {},
-      cart: JSON.parse(localStorage.getItem('cart'))
+      Cart: JSON.parse(localStorage.getItem("Cart")),
     };
   },
-  computed: {Cart},
+  computed: { Cart },
 
   mounted() {
     fetch("https://artisticly-deadly-heroku.herokuapp.com/Products/" + this.id)
@@ -116,20 +116,19 @@ export default {
         console.log(data);
       });
   },
-     components: {Cart},
-methods:{
-   removeItem(product){
-    this.cart.splice(this.cart.indexOf(product),1);
+  components: { Cart },
+  methods: {
+    removeItem(product) {
+      this.Cart.splice(this.Cart.indexOf(product), 1);
+    },
+    AddToCart() {
+      this.Cart.push(this.product);
+      localStorage.setItem("Cart", JSON.stringify(this.Cart));
+      localStorage.getItem("Cart");
+      console.log(console.log(JSON.parse(localStorage.getItem("Cart"))));
+    },
   },
- AddToCart(){
-  this.cart.push(this.product);
-  localStorage.setItem('cart', JSON.stringify(this.cart));
-  localStorage.getItem('cart');
-  console.log(console.log(JSON.parse(localStorage.getItem('cart'))));
-  }
- }
-}
-
+};
 </script>
 
 <style scoped>

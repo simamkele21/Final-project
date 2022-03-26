@@ -1,9 +1,9 @@
 import axios from 'axios';
-const API_URL = 'https://artisticly-deadly-heroku.herokuapp.com/Products/';
+const API_URL = 'https://artisticly-deadly-heroku.herokuapp.com/';
 class AuthService {
   login(client) {
     return axios
-      .patch(API_URL + 'login', {
+      .patch(API_URL + 'Login', {
         name: client.name,
         password: client.password
       })

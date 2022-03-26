@@ -10,6 +10,7 @@
   </nav>
 </template>
 
+
 <style>
 #nav {
   padding: 30px;

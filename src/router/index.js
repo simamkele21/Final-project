@@ -8,7 +8,6 @@ import Contact from "../views/Contact.vue";
 import ProfilePage from "../views/ProfilePage.vue";
 import Login from "../views/Login.vue";
 
-
 const routes = [
   {
     path: "/",
@@ -29,7 +28,7 @@ const routes = [
     path: "/SingleProduct/:id",
     name: "SingleProduct",
     component: SingleProduct,
-    props: true
+    props: true,
   },
   {
     path: "/Cart",
@@ -59,14 +58,24 @@ const router = createRouter({
   routes,
 });
 
-router.beforeEach((to, from, next) => {
-  const publicPages = ['/','/About','/Shop','/SingleProduct','/Login','/ProfilePage','/Contact',];
-  const authRequired = !publicPages.includes(to.path);
-  const loggedIn = localStorage.getItem('client');
-  if (authRequired && !loggedIn) {
-    next('/Login');
-  } else {
-    next();
-  }
-});
+// router.beforeEach((to, from, next) => {
+//   const publicPages = [
+//     "/",
+//     "/About",
+//     "/Shop",
+//     "/SingleProduct",
+//     "/Login",
+//     "/ProfilePage",
+//     "/Contact",
+//   ];
+//   const authRequired = !publicPages.includes(to.path);
+//   const loggedIn = localStorage.getItem("client");
+//   console.log(loggedIn);
+//   console.log(authRequired);
+//   if (authRequired && !loggedIn) {
+//     next("/Login");
+//   } else {
+//     next();
+//   }
+// });
 export default router;
