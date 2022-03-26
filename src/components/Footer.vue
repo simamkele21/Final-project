@@ -15,6 +15,11 @@
 <style scoped>
 .footer {
   /* background-color: rgb(47, 47, 42); */
+  position: fixed;
+  padding: 10px 10px 10px 10px;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
 }
 .btn {
   background-color: transparent;
