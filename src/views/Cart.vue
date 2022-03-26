@@ -49,29 +49,28 @@
   </div>
 </template>
 <script>
-import Products from "@/views/SingleProduct.vue"
+import Products from "@/views/SingleProduct.vue";
 export default {
   data() {
-        return {
-      page: 'Cart',
+    return {
+      page: "Cart",
       products: [],
-      name: '',
-      email: '',
-      message: '',
-      cart: JSON.parse(localStorage.getItem('cart'))
+      name: "",
+      email: "",
+      message: "",
+      cart: JSON.parse(localStorage.getItem("cart")),
     };
   },
   mounted() {
     fetch("https://artisticly-deadly-heroku.herokuapp.com/Products/")
-          .then((res) => res.json())
+      .then((res) => res.json())
       .then((data) => {
         this.products = data;
         console.log(data, this.products);
-      })
+      });
   },
-    components: {Products}
-
-}
+  components: { Products },
+};
 </script>
 
 <style scoped>

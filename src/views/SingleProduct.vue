@@ -102,7 +102,7 @@ export default {
   data() {
     return {
       id: this.$route.params.id,
-      product: {},
+    product: [],
       Cart: JSON.parse(localStorage.getItem("Cart")),
     };
   },
